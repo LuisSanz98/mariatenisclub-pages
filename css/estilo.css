@@ -1,0 +1,167 @@
+/* María Tenis Club — diseño "A · Clásica renovada".
+   Sin fuentes ni recursos externos: no se envían datos de visitantes a terceros y no hacen falta cookies. */
+:root{--azul:#0345bf;--azul-osc:#022a75;--tinta:#1f2430;--gris:#5b6475;--fondo:#f4f6fa;--linea:#e2e6ee;--blanco:#fff}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--tinta);background:var(--blanco);line-height:1.6;font-size:16px}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block;height:auto}
+.wrap{max-width:1160px;margin:0 auto;padding:0 20px}
+.oculto{position:absolute;left:-9999px}
+
+/* barra superior + cabecera */
+.topbar{background:var(--azul-osc);color:#cfdbff;font-size:13px}
+.topbar .wrap{display:flex;gap:22px;justify-content:flex-end;flex-wrap:wrap;padding-top:7px;padding-bottom:7px}
+.topbar a:hover{color:#fff}
+header.cab{position:sticky;top:0;z-index:20;background:#fff;box-shadow:0 1px 0 var(--linea)}
+header.cab .wrap{display:flex;align-items:center;justify-content:space-between;height:74px}
+header.cab .logo img{height:44px;width:auto}
+nav.menu{display:flex;gap:4px;align-items:center}
+nav.menu a{padding:10px 14px;border-radius:8px;font-weight:600;font-size:15px}
+nav.menu a:hover,nav.menu a.activo{background:var(--fondo);color:var(--azul)}
+nav.menu a.cta{background:var(--azul);color:#fff;margin-left:6px}
+nav.menu a.cta:hover{background:var(--azul-osc);color:#fff}
+.hamburguesa{display:none;background:none;border:0;width:44px;height:44px;border-radius:10px;cursor:pointer}
+.hamburguesa span{display:block;width:22px;height:2px;background:var(--tinta);margin:5px auto;transition:.2s}
+
+/* portada */
+.hero{position:relative;min-height:520px;display:flex;align-items:center;color:#fff;
+      background:linear-gradient(90deg,rgba(2,26,74,.88) 0%,rgba(2,26,74,.55) 55%,rgba(2,26,74,.15) 100%),url(/img/hero.jpg) center/cover}
+.hero h1{font-size:clamp(34px,5.5vw,62px);line-height:1.06;font-weight:800;letter-spacing:-.02em;max-width:660px}
+.hero p{font-size:19px;max-width:540px;margin:18px 0 30px;color:#dfe7ff}
+.btn{display:inline-block;padding:14px 24px;border-radius:10px;font-weight:700}
+.btn.blanco{background:#fff;color:var(--azul)}
+.btn.borde{border:2px solid rgba(255,255,255,.7);color:#fff;margin-left:10px}
+.btn.azul{background:var(--azul);color:#fff}
+.btn.azul:hover{background:var(--azul-osc)}
+.cifras{display:flex;gap:40px;margin-top:46px;flex-wrap:wrap}
+.cifras b{display:block;font-size:30px}
+.cifras span{font-size:13px;color:#c3d1f5;text-transform:uppercase;letter-spacing:.08em}
+
+/* cabecera de páginas interiores */
+.portadilla{background:linear-gradient(90deg,var(--azul-osc),var(--azul));color:#fff;padding:54px 0 46px}
+.portadilla h1{font-size:clamp(30px,4vw,44px);line-height:1.1;letter-spacing:-.01em}
+.portadilla p{color:#dfe7ff;margin-top:8px;font-size:17px}
+.migas{font-size:14px;color:#c3d1f5;margin-bottom:10px}
+.migas a:hover{color:#fff}
+
+section{padding:72px 0}
+.tit{display:flex;align-items:end;justify-content:space-between;margin-bottom:28px;gap:20px;flex-wrap:wrap}
+.tit h2{font-size:32px;letter-spacing:-.01em;line-height:1.15}
+.tit small{display:block;color:var(--azul);font-weight:700;text-transform:uppercase;letter-spacing:.12em;font-size:12px;margin-bottom:6px}
+.tit a{color:var(--azul);font-weight:600;white-space:nowrap}
+
+/* tarjetas de noticias */
+.noticias{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.card{background:#fff;border:1px solid var(--linea);border-radius:14px;overflow:hidden;transition:transform .15s,box-shadow .15s;display:flex;flex-direction:column}
+.card:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(3,69,191,.12)}
+.card .foto{aspect-ratio:16/10;background:#dde3ee center/cover}
+.card .foto.vacia{background:linear-gradient(135deg,var(--azul-osc),var(--azul)) center/cover;display:grid;place-items:center}
+.card .foto.vacia img{width:45%;opacity:.9;filter:brightness(0) invert(1)}
+.card .txt{padding:18px 20px 22px;flex:1}
+.fecha{font-size:13px;color:var(--gris)}
+.etiq{display:inline-block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--azul);background:#e8efff;padding:3px 8px;border-radius:6px;margin-right:8px}
+.card h3{font-size:19px;line-height:1.3;margin-top:8px}
+.card p{font-size:15px;color:var(--gris);margin-top:8px}
+
+/* filtros de noticias */
+.filtros{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
+.filtros a{padding:8px 14px;border-radius:999px;border:1px solid var(--linea);font-weight:600;font-size:14px;background:#fff}
+.filtros a:hover{border-color:var(--azul);color:var(--azul)}
+.filtros a.activo{background:var(--azul);border-color:var(--azul);color:#fff}
+
+/* almacén */
+.almacen{background:var(--fondo)}
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.tile{background:#fff;border-radius:14px;padding:24px;display:flex;gap:16px;align-items:flex-start;border:1px solid var(--linea)}
+.tile:hover{border-color:var(--azul)}
+.ico{flex:0 0 48px;height:48px;border-radius:12px;background:var(--azul);display:grid;place-items:center}
+.ico svg{width:24px;height:24px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.tile h3{font-size:17px}
+.tile p{font-size:14px;color:var(--gris)}
+
+/* actividades */
+.acts{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.act{border-radius:14px;overflow:hidden;position:relative;aspect-ratio:3/4;background:center/cover;color:#fff;display:flex;align-items:flex-end}
+.act::before{content:"";position:absolute;inset:0;background:linear-gradient(transparent 40%,rgba(2,26,74,.9))}
+.act div{position:relative;padding:20px}
+.act h3{font-size:22px}
+.act p{font-size:14px;color:#dbe4ff}
+
+/* club */
+.club{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center}
+.club img{border-radius:16px}
+.listas{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;margin-top:20px}
+.listas h4{font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--azul);margin-bottom:6px}
+.listas li{list-style:none;font-size:15px;padding:3px 0;color:var(--gris)}
+.dos{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.panel{background:#fff;border:1px solid var(--linea);border-radius:14px;padding:28px}
+.panel h3{font-size:20px;margin-bottom:8px}
+.panel p{color:var(--gris)}
+.panel .btn{margin-top:16px}
+
+/* artículo / texto largo */
+.articulo{max-width:780px;margin:0 auto}
+.articulo .meta{color:var(--gris);font-size:14px;margin-bottom:24px}
+.articulo .principal{border-radius:14px;margin:0 auto 28px;max-height:720px;width:auto}
+.prosa{font-size:17px;line-height:1.75}
+.prosa p,.prosa ul,.prosa ol,.prosa table,.prosa blockquote{margin:0 0 1.1em}
+.prosa h2,.prosa h3,.prosa h4{margin:1.6em 0 .6em;line-height:1.3}
+.prosa ul,.prosa ol{padding-left:1.4em}
+.prosa a{color:var(--azul);text-decoration:underline;text-underline-offset:2px}
+.prosa img{border-radius:10px;margin:1em auto}
+.prosa table{border-collapse:collapse;width:100%;font-size:15px;display:block;overflow-x:auto}
+.prosa td,.prosa th{border:1px solid var(--linea);padding:6px 10px}
+.volver{display:inline-block;margin-top:36px;color:var(--azul);font-weight:600}
+
+/* listas de enlaces (documentos, álbumes) */
+.grupo{margin-bottom:40px}
+.grupo h2{font-size:22px;margin-bottom:14px}
+.enlaces{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.enlaces a{display:flex;align-items:center;justify-content:space-between;gap:12px;background:#fff;border:1px solid var(--linea);border-radius:12px;padding:14px 16px;font-weight:600}
+.enlaces a:hover{border-color:var(--azul);color:var(--azul)}
+.enlaces a span{color:var(--gris);font-weight:400;font-size:14px}
+.anios{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
+.anios a{padding:6px 12px;border-radius:8px;background:#fff;border:1px solid var(--linea);font-weight:600;font-size:14px}
+.anios a:hover{border-color:var(--azul);color:var(--azul)}
+
+/* contacto */
+.contactos{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.contactos a{background:#fff;border:1px solid var(--linea);border-radius:14px;padding:26px;text-align:center}
+.contactos a:hover{border-color:var(--azul)}
+.contactos .ico{margin:0 auto 12px}
+.contactos b{display:block;font-size:18px}
+.contactos span{color:var(--gris);font-size:15px}
+
+footer.pie{background:#0d1a33;color:#aab6d3;padding:56px 0 24px;font-size:14px}
+footer.pie .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px}
+footer.pie h4{color:#fff;font-size:15px;margin-bottom:12px}
+footer.pie li{list-style:none;padding:3px 0}
+footer.pie a:hover{color:#fff}
+.patro{display:flex;gap:14px;flex-wrap:wrap;margin-top:12px}
+.patro img{height:46px;width:auto;background:#fff;border-radius:8px;padding:4px}
+.redes{display:flex;align-items:center;gap:12px;margin-top:22px}
+.redes span{color:#fff;font-weight:600;margin-right:4px}
+.redes a{display:flex;align-items:center;justify-content:center;width:46px;height:46px;background:#fff;border-radius:8px}
+.redes a:hover{transform:translateY(-2px)}
+.legal{border-top:1px solid #23314f;margin-top:36px;padding-top:18px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.legal nav{display:flex;gap:16px;flex-wrap:wrap}
+
+@media (max-width:900px){
+  .hamburguesa{display:block}
+  nav.menu{display:none;position:absolute;top:74px;left:0;right:0;background:#fff;flex-direction:column;align-items:stretch;padding:10px 20px 20px;box-shadow:0 12px 24px rgba(0,0,0,.08)}
+  nav.menu.abierto{display:flex}
+  nav.menu a{padding:14px}
+  nav.menu a.cta{margin:8px 0 0;text-align:center}
+  .noticias,.tiles,.contactos,.dos{grid-template-columns:1fr}
+  .acts{grid-template-columns:1fr 1fr}
+  .club,footer.pie .cols{grid-template-columns:1fr}
+  .listas{grid-template-columns:1fr 1fr}
+  .cifras{gap:24px}
+  .btn.borde{margin:10px 0 0}
+  .topbar .wrap{justify-content:center;gap:14px}
+  section{padding:56px 0}
+}
+@media (min-width:600px) and (max-width:900px){
+  .noticias,.tiles,.contactos{grid-template-columns:1fr 1fr}
+}
